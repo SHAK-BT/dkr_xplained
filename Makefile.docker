@@ -1,0 +1,16 @@
+# Andrey Shakuro, PROM_WAD
+DOCKER_IMAGE_TAG=xplained:buildroot
+
+all: checkenv
+
+checkenv:
+	# check user in docker group
+	if groups | grep -qwFv docker; then \
+	    echo "Error: current user must be in docker group"; \
+	    exit 1; \
+	fi
+
+image:
+	# AAAAA
+	docker build - < Dockerfile --tag $(DOCKER_IMAGE_TAG)
+
