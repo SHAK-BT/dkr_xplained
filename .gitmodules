@@ -1,3 +1,6 @@
 [submodule "buildroot-at91"]
 	path = buildroot-at91
 	url = https://github.com/linux4sam/buildroot-at91.git
+[submodule "buildroot-external-microchip"]
+	path = buildroot-external-microchip
+	url = https://github.com/linux4sam/buildroot-external-microchip.git
