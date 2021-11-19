@@ -1,10 +1,13 @@
-# Andrey Shakuro, PROM_WAD
+FROM ubuntu:20.04
 
-FROM ubuntu:20.04.2
+ARG DEBIAN_FRONTEND=noninteractive
+ENV TZ=Europe/Moscow
+RUN apt-get install -y tzdata
 
-RUN apt-get update \
- && apt-get install -y libssl-dev \
-    which \
+RUN apt-get update -y \
+ && apt-get install -y \
+    libssl-dev \
+#    which \
     sed \
     make \
     binutils \
@@ -24,12 +27,12 @@ RUN apt-get update \
     bc \
     wget \
     python \
-    ncurses5 \
-    qt5 \
-    glib2 \
-    gtk2 \
-    glade2 \
-    scp \
+#    ncurses5 \
+#    qt5 \
+#    glib2 \
+#    gtk2 \
+#    glade2 \
+#    scp \
     subversion \
     bison \
     flex \
@@ -49,6 +52,8 @@ RUN apt-get update \
     libexpat-dev \
     bzr \
     python-dev \
-    xxd \
+    xxd
+
+RUN cd buildroot-at91
 
 ENV BR2_EXTERNAL=../buildroot-external-microchip/
