@@ -57,6 +57,6 @@ RUN apt-get update -y \
     python-dev \
     xxd
 
-RUN cd buildroot-at91
+#RUN cd buildroot-at91
 
 ENV BR2_EXTERNAL=../buildroot-external-microchip/
