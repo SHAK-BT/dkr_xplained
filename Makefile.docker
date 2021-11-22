@@ -14,3 +14,14 @@ image:
 	# AAAAA
 	docker build - < Dockerfile --tag $(DOCKER_IMAGE_TAG)
 
+build_at91:
+	docker run --rm -v ./buildroot-at91 xplained:buildroot \
+	/bin/bash -cuxe ls; \
+		cd buildroot-at91; \
+		ls -la; \
+		BR2_EXTERNAL=../buildroot-external-microchip/ ; \
+		make atmel_sama5d3_xplained_defconfig  ;\
+		make
+
+
+
